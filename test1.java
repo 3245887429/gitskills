@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class test1 {
 
 	public static void main(String[] args) {
-12	 Scanner sc=new Scanner(System.in);
+	 Scanner sc=new Scanner(System.in);
 	 System.out.println("=========================================");
 	 System.out.println("欢迎使用密码管理系统");
 	 System.out.println("=========================================");
