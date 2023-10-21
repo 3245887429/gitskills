@@ -1,9 +1,17 @@
 import java.util.Scanner;
+<<<<<<< HEAD
 
+=======
+import java.util.Random;
+>>>>>>> e3eb8f4 (代码test1.java)
 public class test1 {
 
 	public static void main(String[] args) {
 	 Scanner sc=new Scanner(System.in);
+<<<<<<< HEAD
+=======
+	
+>>>>>>> e3eb8f4 (代码test1.java)
 	 System.out.println("=========================================");
 	 System.out.println("欢迎使用密码管理系统");
 	 System.out.println("=========================================");
@@ -17,6 +25,10 @@ public class test1 {
 	 while(true) {
 		 System.out.println("请输入选项序号:");
 		 int b= sc.nextInt();
+<<<<<<< HEAD
+=======
+
+>>>>>>> e3eb8f4 (代码test1.java)
 	 switch(b) { 
 	 
 	 case 1: System.out.println("请输入要加密的数字密码");
@@ -27,14 +39,30 @@ public class test1 {
 		      String password1=sc.next();
 	 System.out.println("解密后的密码"+decrypt(password1));
 	 break;
+<<<<<<< HEAD
 	 case 3: ;
 	 case 4: ;
+=======
+	 case 3:  System.out.println("请输入要判断的数字密码");
+		 String password2=sc.next();
+		 System.out.println(judge(password2));
+	 case 4: System.out.println("请输入密码的长度");
+	     int number=sc.nextInt();
+	     System.out.println(RandomCode(number));
+>>>>>>> e3eb8f4 (代码test1.java)
 	 case 5: ;
 	 
 	  }
 	 if(b==5) {
 		 System.out.println("退出");
+<<<<<<< HEAD
 	 }
+=======
+	 }else if(b>5||b<1) {
+		 System.out.println("输入不合法");
+	 }
+	 
+>>>>>>> e3eb8f4 (代码test1.java)
 	 }
 	
 	}	
@@ -72,8 +100,50 @@ public class test1 {
 	    }
 	    return word;
 	}
+<<<<<<< HEAD
 	
 	
  
+=======
+	public static String judge(String password) {
+		String jpassword="";
+		if(password.length()<8||password.length()>=8&&password.matches("\\d{8,}")||password.length()>=8&&password.matches("[a-zA-Z]{8,}")) {
+			jpassword="弱";
+		}
+		else if(password.length()>=8&&(password.matches(".*\\d+.*")&&password.matches(".*[a-z]+.*"))&&password.matches(".*[A-Z]+.*")){
+			jpassword="强";
+		}
+		else if(password.length()>=8&&(password.matches(".*\\d+.*")&&password.matches(".*[a-zA-Z]+.*"))){
+			jpassword="中";
+		}
+		return jpassword ;
+	}
+	public static String RandomCode(int number) {
+		 
+		Random r=new Random();
+		int randomNumber=r.nextInt(3);
+		char randomNumber1=(char)(r.nextInt(10)+48);
+		char randomNumber2=(char)(r.nextInt(26)+65);
+		char randomNumber3=(char)(r.nextInt(26)+97);
+		String word="";
+		word=word+randomNumber1+randomNumber2+randomNumber3;
+		while(number-3>0) {			
+			if(randomNumber==0) {
+				word+=(char)(r.nextInt(10)+48);
+				number--;
+			}else if(randomNumber==1){
+				word+=(char)(r.nextInt(26)+65);
+				number--;
+			}else if(randomNumber==2) {
+				word+=(char)(r.nextInt(26)+97);
+				number--;
+			}
+			 randomNumber=r.nextInt(3);
+		}
+		 
+		
+		return word;
+	}
+>>>>>>> e3eb8f4 (代码test1.java)
    
 }
